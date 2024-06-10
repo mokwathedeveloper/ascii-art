@@ -1,10 +1,9 @@
 package main
 
 import (
+	"component/asciiart"
 	"os"
 	"strings"
-
-	"ascii-art/asciiart"
 )
 
 func main() {
