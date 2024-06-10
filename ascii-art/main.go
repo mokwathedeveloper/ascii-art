@@ -1,18 +1,19 @@
 package main
 
 import (
-	"component/asciiart"
+	"ascii-art/component"
+
 	"os"
 	"strings"
 )
 
 func main() {
 	// Determine the correct file based on the arguments
-	fileName := asciiart.GetTheCorrectFile(os.Args)
+	fileName := component.GetTheCorrectFile(os.Args)
 
 	// Read the contents of the file
 	fileContents, err := os.ReadFile(fileName)
-	asciiart.HandleError(err)
+	component.HandleError(err)
 
 	// Split the file contents based on the file type
 	var lines []string
@@ -23,8 +24,8 @@ func main() {
 	}
 
 	// Create the ASCII graphics map
-	asciiMap := asciiart.MakeAsciiGraphicsMap(lines)
+	asciiMap := component.MakeAsciiGraphicsMap(lines)
 
 	// Output the ASCII graphics for the input string
-	asciiart.Output(os.Args[1], lines, asciiMap)
+	component.Output(os.Args[1], lines, asciiMap)
 }
