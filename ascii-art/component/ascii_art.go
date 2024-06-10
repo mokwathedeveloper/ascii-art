@@ -85,3 +85,12 @@ func Output(str string, fileContents []string, asciiMap map[rune]int) {
 		}
 	}
 }
+
+// HandleError outputs an error message and exits the program.
+func HandleError(err error) {
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(0)
+	}
+}
+
