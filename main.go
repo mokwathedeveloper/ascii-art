@@ -1,7 +1,6 @@
 package main
 
 import (
-	//"fmt"
 	"os"
 	"strings"
 
@@ -11,6 +10,10 @@ import (
 func main() {
 	// Determine the correct file based on the arguments
 	fileName := component.GetTheCorrectFile(os.Args)
+
+	// Validate the file checksum
+	err := ValidateFileChecksum(fileName)
+	component.HandleError(err)
 
 	// Read the contents of the file
 	fileContents, err := os.ReadFile(fileName)
@@ -24,8 +27,6 @@ func main() {
 		lines = strings.Split(string(fileContents), "\n")
 	}
 
-	//str, err := calculateChecksum("thinkertoy.txt")
-	//fmt.Println(str)
 	// Create the ASCII graphics map
 	asciiMap := component.MakeAsciiGraphicsMap(lines)
 
