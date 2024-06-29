@@ -64,6 +64,12 @@ func Output(str string, fileContents []string, asciiMap map[rune]int) {
 	str = strings.ReplaceAll(str, "\\n", "\n")
 	str = strings.ReplaceAll(str, "\\t", "\t")
 	str = strings.ReplaceAll(str, "\\r", "\r")
+	str = strings.ReplaceAll(str, "\\r", "\r")
+	str = strings.ReplaceAll(str, "\\f", "\f")
+	str = strings.ReplaceAll(str, "\\v", "\v")
+	str = strings.ReplaceAll(str, "\\t", "\t")
+	str = strings.ReplaceAll(str, "\\b", "\b")
+	str = strings.ReplaceAll(str, "\\a", "\a")
 
 	// Split the input into lines
 	lines := strings.Split(str, "\n")
