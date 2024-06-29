@@ -2,7 +2,6 @@ package main
 
 import (
 	"ascii-art/component"
-
 	"os"
 	"strings"
 )
