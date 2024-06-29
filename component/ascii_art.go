@@ -15,9 +15,11 @@ const (
 // MakeAsciiGraphicsMap maps runes to their corresponding starting points in the ASCII graphic.
 func MakeAsciiGraphicsMap(fileContents []string) map[rune]int {
 	asciiMap := map[rune]int{}
+	startAscii := 32
 	for i, content := range fileContents {
 		if len(content) == 0 || len(content) == 1 {
-			asciiMap[rune(firstAscii+i)] = i + 1
+			asciiMap[rune(startAscii)] = i + 1
+			startAscii++
 		}
 	}
 	return asciiMap
@@ -93,4 +95,3 @@ func HandleError(err error) {
 		os.Exit(0)
 	}
 }
-
