@@ -1,9 +1,11 @@
 package main
 
 import (
-	"ascii-art/component"
+	//"fmt"
 	"os"
 	"strings"
+
+	"ascii-art/component"
 )
 
 func main() {
@@ -22,6 +24,8 @@ func main() {
 		lines = strings.Split(string(fileContents), "\n")
 	}
 
+	//str, err := calculateChecksum("thinkertoy.txt")
+	//fmt.Println(str)
 	// Create the ASCII graphics map
 	asciiMap := component.MakeAsciiGraphicsMap(lines)
 

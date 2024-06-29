@@ -42,7 +42,7 @@ func GetTheCorrectFile(args []string) string {
 		switch args[2] {
 		case "-t", "-thinkertoy", "thinkertoy":
 			return "thinkertoy.txt"
-		case "-s", "-shadow":
+		case "-s", "-shadow", "shadow":
 			return "shadow.txt"
 		case "-standard", "standard":
 			return "standard.txt"
