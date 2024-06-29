@@ -25,7 +25,7 @@ To use this ASCII Art Generator, ensure you have Go installed on your system. Th
 
 1. Clone the repository:
     ```sh
-    git clone <repository_url>
+    git clone https://learn.zone01kisumu.ke/git/mmoffat/ascii-art.git
     cd ascii-art-generator
     ```
 
@@ -39,7 +39,7 @@ To use this ASCII Art Generator, ensure you have Go installed on your system. Th
 Run the ASCII Art Generator with the following command:
 
 ```sh
-./ascii-art-generator <input_text>
+./ascii-art-generator <hello>
 ```
 
 Replace `<input_text>` with the text you want to convert to ASCII art.
