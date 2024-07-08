@@ -59,11 +59,13 @@ func Output(str string, fileContents []string, asciiMap map[rune]int) {
 	if len(str) == 0 {
 		return
 	}
-
+	switch str {
+	case "\t":
+		fmt.Print("unsupported escape sequence")
+	}
 	// Replace escape sequences with their actual meanings
 	str = strings.ReplaceAll(str, "\\n", "\n")
 	str = strings.ReplaceAll(str, "\\t", "\t")
-	str = strings.ReplaceAll(str, "\\r", "\r")
 	str = strings.ReplaceAll(str, "\\r", "\r")
 	str = strings.ReplaceAll(str, "\\f", "\f")
 	str = strings.ReplaceAll(str, "\\v", "\v")
@@ -71,6 +73,10 @@ func Output(str string, fileContents []string, asciiMap map[rune]int) {
 	str = strings.ReplaceAll(str, "\\b", "\b")
 	str = strings.ReplaceAll(str, "\\a", "\a")
 
+	if onlyNewLines(str) {
+		fmt.Print(str)
+		return
+	}
 	// Split the input into lines
 	lines := strings.Split(str, "\n")
 
@@ -100,6 +106,15 @@ func Output(str string, fileContents []string, asciiMap map[rune]int) {
 			fmt.Println()
 		}
 	}
+}
+
+func onlyNewLines(s string) bool {
+	for _, v := range s {
+		if v != '\n' {
+			return false
+		}
+	}
+	return true
 }
 
 // HandleError outputs an error message and exits the program.
