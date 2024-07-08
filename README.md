@@ -24,22 +24,17 @@ This project is an ASCII Art Generator that converts input text into ASCII art u
 To use this ASCII Art Generator, ensure you have Go installed on your system. Then, follow these steps:
 
 1. Clone the repository:
-    ```sh
-    git clone https://learn.zone01kisumu.ke/git/mmoffat/ascii-art.git
-    cd ascii-art-generator
-    ```
-
-2. Build the project:
-    ```sh
-    go build -o ascii-art-generator main/main.go
-    ```
+	```sh
+	git clone https://learn.zone01kisumu.ke/git/mmoffat/ascii-art.git
+	cd ascii-art
+	```
 
 ## Usage
 
 Run the ASCII Art Generator with the following command:
 
 ```sh
-./ascii-art-generator <hello>
+./ascii-art <hello>
 ```
 
 Replace `<input_text>` with the text you want to convert to ASCII art.
@@ -49,14 +44,14 @@ Replace `<input_text>` with the text you want to convert to ASCII art.
 ```plaintext
 .
 ├── component
-│   └── ascii.go           # Functions to handle ASCII art generation
+│   └── ascii.go       	# Functions to handle ASCII art generation
 ├── main
-│   ├── checksum.go        # Functions for file checksum validation
-│   ├── download.go        # Functions for downloading missing template files
-│   └── main.go            # Main entry point of the application
-├── templates              # Directory containing ASCII art templates
-├── go.mod                 # Go module file
-└── go.sum                 # Go dependencies file
+│   ├── checksum.go    	# Functions for file checksum validation
+│   ├── download.go    	# Functions for downloading missing template files
+│   └── main.go        	# Main entry point of the application
+├── templates          	# Directory containing ASCII art templates
+├── go.mod             	# Go module file
+└── go.sum             	# Go dependencies file
 ```
 
 ### `component/ascii.go`
@@ -90,6 +85,4 @@ Contributions are welcome! Please follow these steps to contribute:
 3. Make your changes and commit them: `git commit -m 'Add new feature'`
 4. Push to the branch: `git push origin my-feature-branch`
 5. Create a pull request.
-
-
 
